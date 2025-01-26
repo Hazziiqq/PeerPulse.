@@ -9,8 +9,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        lavender: "#A19AD3", 
+        cheer:"#FFFDEC",
+      },
+      fontFamily: {
+        raleway: ["Raleway", "sans-serif"],
       },
     },
   },
