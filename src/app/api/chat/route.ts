@@ -13,13 +13,15 @@ export async function POST(req: Request) {
 
     const data = await req.json();
     const prompt = data.body;
+    console.log("Received data:", data); 
 
     if (!prompt || typeof prompt !== "string") {
       throw new Error("Invalid or missing 'body' in request.");
     }
 
     const result = await model.generateContent(prompt);
-    const output = result.response; // Confirm structure with API documentation
+    console.log("Generated content:", result);  // Log the full result
+    const output = result.response;  // Confirm structure with API documentation
 
     return NextResponse.json({ output });
   } catch (error: any) {
